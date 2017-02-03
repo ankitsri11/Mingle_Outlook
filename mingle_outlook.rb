@@ -67,13 +67,25 @@ OPTIONS = {:access_key_id => '<access key>', :access_secret_key => '<secret key>
 emails.each do |email|
 
 puts "Processing email with subject : #{email.subject}"
+	
+if email.parts[0].body.to_s.length == 0
+	
+	PARAMS = { 
+	  :card => { 
+	    :card_type_name => "Story", :name => email.subject
+
+	    }
+	  }
+else 
+
+
 
 	PARAMS = { 
 	  :card => { 
-	    :card_type_name => "<card_type>", :name => email.subject, :description => email.body.raw_source.force_encoding("UTF-8")
+	    :card_type_name => "<card_type>", :name => email.subject, :description => email.part[0].body.raw_source.force_encoding("UTF-8")
 	    }
 	  }
-
+end
 	http_post(URL, PARAMS, OPTIONS)
 end
 
