@@ -72,7 +72,7 @@ if email.parts[0].body.to_s.length == 0
 	
 	PARAMS = { 
 	  :card => { 
-	    :card_type_name => "Story", :name => email.subject
+	    :card_type_name => "<card_type>", :name => email.subject
 
 	    }
 	  }
