@@ -53,13 +53,7 @@ Mail.defaults do
                           :enable_ssl => true    }
 end
 
-
-
 emails = Mail.find(keys: ['NOT','SEEN','FROM','ankitsri@thoughtworks.com'])
-
-
-
-
 
 URL = 'https://<your_instance_name>.mingle-api.thoughtworks.com/api/v2/projects/<project_name>/cards.xml'
 OPTIONS = {:access_key_id => '<access key>', :access_secret_key => '<secret key>'}
@@ -68,25 +62,14 @@ emails.each do |email|
 
 puts "Processing email with subject : #{email.subject}"
 	
-if email.parts[0].body.to_s.length == 0
-	
-	PARAMS = { 
+	params = { 
 	  :card => { 
-	    :card_type_name => "<card_type>", :name => email.subject
+	    :card_type_name => "<card_type>", :name => email.subject, :description => email.text_part ? email.text_part.body.decoded : nil
 
 	    }
 	  }
-else 
 
-
-
-	PARAMS = { 
-	  :card => { 
-	    :card_type_name => "<card_type>", :name => email.subject, :description => email.part[0].body.raw_source.force_encoding("UTF-8")
-	    }
-	  }
-end
-	http_post(URL, PARAMS, OPTIONS)
+	http_post(URL, params, OPTIONS)
 end
 
 puts "All the emails are processed!!!"
