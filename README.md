@@ -10,7 +10,7 @@ Requirements :
  gem install api-auth -v 1.0.3
  ```
  
-Command to run ::::::
+Command to run :::::
 
 `ruby mingle_outlook.rb`
 
