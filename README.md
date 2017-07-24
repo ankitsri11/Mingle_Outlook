@@ -9,12 +9,7 @@ Requirements :
  gem install gmail
  gem install api-auth -v 1.0.3
  ```
- 
- 
- 
- test
- test2
- 
+
  
  
 Command to run ::::::
