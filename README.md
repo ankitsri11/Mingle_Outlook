@@ -9,8 +9,7 @@ Requirements :
  gem install gmail
  gem install api-auth -v 1.0.3
  ```
- testttttt
- 
-Command to run ::::
+Command to run ::::::
 
 `ruby mingle_outlook.rb`
+
