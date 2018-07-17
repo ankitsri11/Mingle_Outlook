@@ -13,7 +13,7 @@ Requirements :
 
  
  
-Command to run ::::::
+Command to run ::::
 
 `ruby mingle_outlook.rb`
 
