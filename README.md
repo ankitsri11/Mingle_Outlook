@@ -1,5 +1,5 @@
 ## Mingle_Outlook
-ttttttt
+
 The goal of this tool is to parse your Outlook emails and for each, create a card within a mingle project with the content of the email in the body of the new Mingle card. 
 
 Requirements : 
@@ -9,10 +9,7 @@ Requirements :
  gem install gmail
  gem install api-auth -v 1.0.3
  ```
-
- 
- 
-Command to run ::::::
+Command to run ::::
 
 `ruby mingle_outlook.rb`
 
