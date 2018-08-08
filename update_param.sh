@@ -11,7 +11,7 @@ ETAG=$(sed -n 's/^ETag: "\([^"]*\)".*/\1/p' headers)
 echo $ETAG
 
 # Make some change to the pipeline config. In this case, prepend "HOTFIX" to the label template.
-sed -e 's/"label_template" : "/&'$release_type'-/' pipeline >pipeline.for_update
+sed -e 's/\("label_template" : "\).*\(*\)/\1'$release'-\2/' pipeline >pipeline.for_update
 
 cat pipeline.for_update
 
